@@ -1,6 +1,18 @@
 version: '3'
 
 services:
+  db:
+    image: mariadb:10.1
+    restart: always
+    ports:
+      - '3306:3306'
+    environment:
+      MYSQL_DATABASE: db
+      MYSQL_RANDOM_ROOT_PASSWORD: 'yes'
+      MYSQL_PASSWORD: sdrugntqqsciur
+      MYSQL_USER: php_user
+    networks:
+      - docker_sample_php_website
   nginx:
     image: nginx:1.12
     working_dir: /client

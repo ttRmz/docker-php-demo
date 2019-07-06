@@ -1,6 +1,12 @@
 FROM php:7.1-fpm
 
-RUN apt-get update 
+
+# install mysqli
+RUN docker-php-ext-install mysqli && docker-php-ext-enable mysqli
+
+# install gd
+RUN apt-get update -y && apt-get install -y libpng-dev
+RUN docker-php-ext-install gd && docker-php-ext-enable gd
 
 # install wget
 RUN apt-get install wget -y
