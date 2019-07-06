@@ -2,7 +2,7 @@ version: '3'
 
 services:
   nginx:
-    image: nginx:1.17
+    image: nginx:1.12
     working_dir: /client
     depends_on:
       - php
