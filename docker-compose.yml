@@ -15,7 +15,7 @@ services:
       - docker_sample_php_website
   php:
     build: ./
-    working_dir: /client
+    working_dir: /app
     volumes:
       - ./client:/app
     networks:
